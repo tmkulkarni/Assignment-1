@@ -96,11 +96,11 @@ namespace Assignment1_Summer2021
                 
                 int xPosition = 0, yPosition = 0;           //Here I am trying to maintain camalCaseConvention
 
-                for(int i = 0; i<moves.Length; i++)
+                for(int i = 0; i<moves.Length; i++)         //Simple conditional cogic for positioning
                 {
                     if(moves[i] == 'U' || moves[i] == 'u')
                     {
-                        yPosition++;
+                        yPosition++;                        //Incrementing positions according to conditions
                     }
                     if (moves[i] == 'D' || moves[i] == 'd')
                     {
@@ -116,7 +116,7 @@ namespace Assignment1_Summer2021
                     }
 
                     if (xPosition == 0 && yPosition == 0)
-                        return true;
+                        return true;                        //Returning boolean output
                 }
 
                 return false;
@@ -128,6 +128,11 @@ namespace Assignment1_Summer2021
             }
 
         }
+
+      /*  <SelfReflectionProblem1> 
+       *  From above code,I revised the use of conditional logic(if-else).
+       *  Time taken for coding this logic - 5 mins
+       *  </SelfReflectionProblem1> */
 
         /* 
  <summary>
@@ -147,10 +152,10 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
         {
             try
             {
-                string defaultString = "abcdefghijklmnopqrstuvwxyz";
+                string defaultString = "abcdefghijklmnopqrstuvwxyz";           //This string is utilized for panagram comparison further
                 for(int i = 0; i<defaultString.Length; i++)
                 {
-                    for (int j = 0; j < s.Length;j++)
+                    for (int j = 0; j < s.Length;j++)           //Comparing in repeated cyles
                     {
                         if (defaultString[i] == s[j])
                             break;
@@ -169,6 +174,10 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
 
         }
 
+        /*  <SelfReflectionProblem2> 
+      *  From above code,I understood the use of iterative and conditional logic. 
+      *  Time taken for coding this logic - 15 mins
+      *  </SelfReflectionProblem2> */
 
         /*
 
@@ -185,20 +194,20 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
  <returns>int </returns>
      */
 
-        private static int NumIdenticalPairs(int[] arr)
+        private static int NumIdenticalPairs(int[] arr)     //Taking array as an input from main function
         {
             try
             {
                 int count = 0;
                 for(int i = 0; i<arr.Length; i++)
                 {
-                    for(int j=i+1; j<arr.Length; j++)
+                    for(int j=i+1; j<arr.Length; j++)       //Similar to previous problem, use of both iterative and conditional logic
                     {
                         if (arr[i] == arr[j])
                             count++;
                     }
                 }
-                return count;
+                return count;                               //Returning count
 
             }
             catch (Exception)
@@ -209,7 +218,10 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
         }
 
 
-
+        /*  <SelfReflectionProblem3> 
+            *  From above code,I understood the use of array. 
+            *  Time taken for coding this logic - 10 mins
+            *  </SelfReflectionProblem3> */
 
 
 
@@ -236,15 +248,15 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
         {
             try
             {
-                int leftSum = 0;
+                int leftSum = 0;                    //Initializing 2 variables as sum of the numbers of the left side of the pivot index and total sum
                 int totalSum = 0;
 
-                for (int i = 0; i <nums.Length; i++)
+                for (int i = 0; i <nums.Length; i++)  //Finding the total sum
                 {
-                    totalSum = totalSum + nums[i];
+                    totalSum = totalSum + nums[i];  
 
                 }
-                for (int j = 0; j <nums.Length; j++)
+                for (int j = 0; j <nums.Length; j++)   //Using for loop and if conditioning to to check whether pivot index is possible or not and return the index if it is possible 
                 {
                     if (totalSum - nums[j] == leftSum)
                     {
@@ -266,6 +278,10 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
             }
 
         }
+        /*  <SelfReflectionProblem4> 
+            *  From above code,I understood the logic of finding pivot index. This was the first time I was coding this logic so it took me some more time to code it. 
+            *  Time taken for coding this logic - 30 mins
+            *  </SelfReflectionProblem4> */
 
         /*
             /// <summary>
@@ -285,15 +301,15 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
 
     */
 
-        private static string MergeAlternately(string word1, string word2)
+        private static string MergeAlternately(string word1, string word2)  //Here we are taking two strings as input
         {
             try
             {
-                string finalWord = "";
+                string finalWord = "";                                      //Declaring string to store the output
                 int i = 0, j = 0;
 
-                while(i<word1.Length||j<word2.Length)
-                {
+                while(i<word1.Length||j<word2.Length)                       //Using pipe to implement "OR logic"
+                {                                                           //Used while loop
                     if(i<word1.Length)
                     {
                         finalWord += word1[i];
@@ -317,6 +333,11 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
 
         }
 
+
+        /*  <SelfReflectionProblem5> 
+           *  From above code,I understood the use of while loop because initially I was trying to implement it using for loop but was finding it difficult to implement piping in for loop condition. 
+           *  Time taken for coding this logic - 10 mins
+           *  </SelfReflectionProblem5> */
         /*
         <summary>
     /// A sentence sentence is given, composed of words separated by spaces. Each word consists of lowercase and uppercase letters only.
@@ -345,23 +366,23 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
         {
             try
             {
-                string[] statement = sentence.Split(" ");
+                string[] statement = sentence.Split(" ");                      
 
-                StringBuilder goatLatinStatement = new StringBuilder();
+                StringBuilder goatLatinStatement = new StringBuilder();         //Using string builder for storing output because it is mutable
                 int counter = 1;
 
-                foreach(string word in statement)
+                foreach(string word in statement)                               //Using foreach because it helps in iterating string and char variables.
                 {                   
                     if(word[0]=='a' || word[0] == 'A' || word[0] == 'e' || word[0] == 'E' || word[0] == 'i'  || word[0] == 'I' || word[0] == 'o' || word[0] == 'O' || word[0] == 'u' || word[0] == 'U' )
                     {
-                        goatLatinStatement.Append(word + "ma");                    
+                        goatLatinStatement.Append(word + "ma");                  //Condition for vowels  
                     }
-                    else
+                    else                                                    //Condition for consonents
                     {
                         goatLatinStatement.Append(word.Substring(1) + word.Substring(0,1) + "ma");                      
                     }                   
                     for(int k = 0; k<counter; k++)
-                    {
+                    {                                                       //Condition for appending 'a'
                         goatLatinStatement.Append("a");                        
                     }
                     counter++;
@@ -370,7 +391,7 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
                         goatLatinStatement.Append(" ");
                     }
                 }
-                return goatLatinStatement.ToString();
+                return goatLatinStatement.ToString();                   //again converting stringbuilder to string and returning it
 
             }
             catch (Exception)
@@ -379,6 +400,12 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
                 throw;
             }
 
+            /*  <SelfReflectionProblem6> 
+             *  This was a difficult logic to implement because it consisted so many conditions. So I tried to implement it in steps.
+             *  I undertood the use of string builder data type and for that, used system.Text package
+             *  Initially I was not trying to use substring, but eventually, I found it convenient to use.
+             *  Time taken for coding this logic - 60 mins
+             *  </SelfReflectionProblem6> */
 
         }
 
